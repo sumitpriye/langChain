@@ -46,8 +46,8 @@ langchain-community: Third-party integrations that are community maintained.
 langgraph: Orchestration framework for combining LangChain components into production-ready applications with persistence, streaming, and other key features. See LangGraph documentation.
 
 """
-# result = chain.invoke({"text": text})
+result = chain.invoke({"text": text})
 
-# print(result)
+print(result)
 
 chain.get_graph().print_ascii()

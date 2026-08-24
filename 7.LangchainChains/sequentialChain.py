@@ -8,7 +8,7 @@ prompt1 = PromptTemplate(
 )
 
 prompt2 = PromptTemplate(
-    template = "Generate a 5 pointer summary from the follwoing text \n  {text}",
+    template = "Generate a 5 pointer summary from the following text \n  {text}",
     input_variables=['text']
 )
 
@@ -22,4 +22,4 @@ result = chain.invoke({"topic": "benefits of exercise"})
 
 print(result)
 
-# chain.get_graph().print_ascii()
+chain.get_graph().print_ascii()

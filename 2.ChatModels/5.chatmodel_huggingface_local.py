@@ -3,11 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 llm= HuggingFacePipeline.from_model_id(
-    repo_id='meta-llama/Llama-3.1-8B-Instruct',
+    model_id='distilgpt2',
     task='text-generation',
-    pipeline_kwargs=dict(
-        temperature=0.5,
-        max_new_tokens=100)
+    pipeline_kwargs=dict(temperature=0.5,max_new_tokens=100)
 )
 model = ChatHuggingFace(llm=llm)
 

@@ -1,16 +1,15 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 import streamlit as st
-from langchain_core.prompts import PromptTemplate,load_prompt
+from langchain_core.prompts import PromptTemplate, load_prompt
 
 load_dotenv()
 
-
 llm= HuggingFaceEndpoint(
-    repo_id='openai/gpt-oss-20b',
+    repo_id='openai/gpt-oss-120b',
     task='text-generation'
 )
-model = ChatHuggingFace(llm=llm,)
+model = ChatHuggingFace(llm=llm)
 
 st.header("Research Tool")
 
@@ -37,3 +36,13 @@ prompt = template.invoke({
 if st.button('Summarise'):
     result =model.invoke(prompt)
     st.write(result.content)
+
+
+# if st.button('Summarise'):
+#     chain = template | model
+#     result = chain.invoke({
+#     'paper_input':paper_input,
+#     'style_input':style_input,
+#     'length_input':length_input
+# })
+#     st.write(result.content)

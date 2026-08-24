@@ -1,4 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate,MessagesPlaceholder
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
+
 
 # chat template
 chat_template=ChatPromptTemplate([

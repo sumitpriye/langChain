@@ -25,7 +25,7 @@ template2 = PromptTemplate(template='Write a 5 line summary on the following tex
 
 parser = StrOutputParser()
 
-chain = template1 |model|parser|template2|model|parser
+chain = template1 | model | parser | template2 | model | parser
 result = chain.invoke({'topic':'black hole'})
 
 print(result)

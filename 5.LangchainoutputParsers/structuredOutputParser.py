@@ -12,19 +12,19 @@ llm= HuggingFaceEndpoint(
 )
 model = ChatHuggingFace(llm=llm)
 
-schema = [ResponseSchema(name='fact_1',description='Fact 1 about the topic'),
-          ResponseSchema(name='fact_2',description='Fact 2 about the topic'),
-          ResponseSchema(name='fact_3',description='Fact 3 about the topic'),
-          ResponseSchema(name='fact_4',description='Fact 4 about the topic'),
-          ResponseSchema(name='fact_5',description='Fact 5 about the topic')]
+schema = [
+            ResponseSchema(name='fact_1', description='Fact 1 about the topic'),
+            ResponseSchema(name='fact_2', description='Fact 2 about the topic'),
+            ResponseSchema(name='fact_3', description='Fact 3 about the topic'),
+            ResponseSchema(name='fact_4', description='Fact 4 about the topic'),
+            ResponseSchema(name='fact_5', description='Fact 5 about the topic')
+          ]
 
 parser = StructuredOutputParser.from_response_schemas(schema)
 
 template = PromptTemplate(template="Give 5 facts about the {topic} \n {format_instruction}",
                           input_variables=['topic'],
                           partial_variables={'format_instruction':parser.get_format_instructions()}
-
-
                           )
 
 # prompt = template.invoke({'topic':'black hole'})
@@ -32,6 +32,6 @@ template = PromptTemplate(template="Give 5 facts about the {topic} \n {format_in
 # final_result = parser.parse(result.content)
 # print(final_result)
 
-chain = template | model |parser
+chain = template | model | parser
 result = chain.invoke({'topic':'black hole'})
 print(result)

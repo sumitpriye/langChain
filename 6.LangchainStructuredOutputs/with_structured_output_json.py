@@ -40,7 +40,7 @@ json_schema = {
       "description": "Write down all the cons inside a list"
     }
   },
-  "required": ["key_themes", "summary", "sentiment"]
+  "required": ["summary", "sentiment"]
 }
 
 

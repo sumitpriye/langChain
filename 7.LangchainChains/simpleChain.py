@@ -4,6 +4,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from transformers import pipeline
 from langchain_core.output_parsers import StrOutputParser
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 model_name = "facebook/opt-1.3b"

@@ -19,7 +19,7 @@ template = PromptTemplate(template='Give me the name, age and city of a fictiona
 
 
 # prompt = template.format()
-
+  
 # result = model.invoke(prompt)
 
 # # print(result)

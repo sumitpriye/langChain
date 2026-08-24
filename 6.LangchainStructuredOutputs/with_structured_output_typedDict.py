@@ -1,6 +1,6 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
-from typing import TypedDict,Annotated,Optional,Literal
+from typing import TypedDict, Annotated, Optional, Literal
 
 load_dotenv()
 
@@ -17,11 +17,11 @@ class Review(TypedDict):
     # product_category:str
     # sentiment:str
 
-    summary:Annotated[str,"A brief summary of the review"]
-    product_category:Annotated[str,"Category to which the product belogs for which review has been written"]
-    sentiment:Annotated[Literal['pos','neg'],"Sentiment of the review, can be either positive, negative or neutral"]
-    pros:Annotated[Optional[list[str]],"List down the pros"]
-    cons:Annotated[Optional[list[str]],"List down the cons"]
+    summary          :       Annotated[str,"A brief summary of the review"]
+    product_category :       Annotated[str,"Category to which the product belogs for which review has been written"]
+    sentiment        :       Annotated[Literal['pos','neg'],"Sentiment of the review, can be either positive, negative or neutral"]
+    pros             :       Annotated[Optional[list[str]],"List down the pros"]
+    cons             :       Annotated[Optional[list[str]],"List down the cons"]
 
 structured_model = model.with_structured_output(Review)
 

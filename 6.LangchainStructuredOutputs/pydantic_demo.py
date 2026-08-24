@@ -1,13 +1,13 @@
-from pydantic import BaseModel,EmailStr,Field
+from pydantic import BaseModel, EmailStr,  Field
 from typing import Optional
 
 class Student(BaseModel):
-    name:str
-    age:Optional[int]=None
-    email:EmailStr
-    cgpa:float = Field(gt=0,lt=10,default=7.0)
+    name: str
+    age: Optional[int]=None
+    email: EmailStr
+    cgpa: float = Field(gt = 0, lt = 10, default = 7.0)
 
-new_student={'name':'Sumit','age':'23','email':'sumit@gmail.com','cgpa':9}
+new_student={'name':'Sumit', 'age':'23', 'email':'sumit@gmail.com',   'cgpa':9}
 # coerce
 student = Student(**new_student)
 

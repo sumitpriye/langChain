@@ -3,12 +3,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 llm= HuggingFaceEndpoint(
-    repo_id='meta-llama/Llama-3.1-8B-Instruct',
+    repo_id='deepseek-ai/DeepSeek-V4-Pro-0813',
     task='text-generation'
 )
 model = ChatHuggingFace(llm=llm)
 
-result = model.invoke("What is the capital of India?")
+result = model.invoke("What is death?")
 
 print(result)
 print(result.content)

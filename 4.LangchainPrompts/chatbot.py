@@ -1,7 +1,7 @@
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 from dotenv import load_dotenv
 import streamlit as st
-from langchain_core.messages import SystemMessage,HumanMessage,AIMessage
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 load_dotenv()
 
@@ -22,4 +22,4 @@ while True:
         chat_history.append(AIMessage(content=result.content))
         print('AI: ',result.content)
 
-print(chat_history)
+print(chat_history) 
