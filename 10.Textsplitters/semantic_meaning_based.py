@@ -1,4 +1,4 @@
-from langchain_experimental.text_splitter import SemanticChunker
+from langchain_text_splitters import SemanticChunker
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from dotenv import load_dotenv
 
