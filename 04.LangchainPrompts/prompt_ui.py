@@ -34,7 +34,7 @@ prompt = template.invoke({
 })
 
 if st.button('Summarise'):
-    result =model.invoke(prompt)
+    result = model.invoke(prompt)
     st.write(result.content)
 
 
